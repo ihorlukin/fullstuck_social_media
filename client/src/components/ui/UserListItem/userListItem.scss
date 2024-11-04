@@ -1,0 +1,9 @@
+.userListItem {
+	@apply bg-background cursor-pointer w-full flex items-center px-3 py-2 mb-2 rounded-lg;
+	gap: 5px;
+	flex-direction: column;
+
+	&:hover {
+		@apply bg-backgroundSf;
+	}
+}

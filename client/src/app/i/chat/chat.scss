@@ -1,0 +1,9 @@
+.chat {
+	@apply bg-backgroundSf w-full;
+	height: calc(100vh - 50px);
+
+	.div {
+		@apply bg-backgroundSf flex gap-3 w-full;
+		height: calc(100vh - 50px);
+	}
+}

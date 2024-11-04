@@ -1,0 +1,84 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs
+*.log
+*.log.*
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Build directories
+/dist
+/build
+/out
+.next
+
+# Dependency directories
+/.pnp
+.pnp.js
+.vscode/
+
+# Coverage and Testing
+coverage/
+*.lcov
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Miscellaneous
+.tmp/
+.cache/
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Prisma (если используете Prisma ORM)
+prisma/.env
+
+# Docker
+docker-compose.override.yml
+docker-compose.override.yaml
+
+# Firebase (если используется Firebase)
+firebase-debug.log
+.firebaserc
+
+# Production build (если используете специальные сборки для продакшена)
+.prod/
+
+# Redux (если данные сохраняются в локальном состоянии)
+redux-persist/
+persistor/
+
+# Storybook (если используете Storybook)
+.storybook/
+storybook-static/
+
+# Next.js specific
+.next/
+.next/cache/
+__generated__/
+generated/
+
+# Yarn
+.yarn/
+.pnp.*

@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "latest": "^0.2.0",
+    "node": "^22.6.0"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0"
+  }
+}

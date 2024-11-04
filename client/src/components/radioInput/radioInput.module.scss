@@ -1,0 +1,14 @@
+.input {
+	@apply border border-border border-solid;
+	padding: 5px;
+	border: none;
+	color: gray;
+	background-color: transparent;
+}
+
+.label_radio {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	align-items: center;
+}

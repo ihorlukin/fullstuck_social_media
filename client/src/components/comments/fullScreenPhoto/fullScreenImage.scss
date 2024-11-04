@@ -1,0 +1,25 @@
+.fullscreen_overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9); // Черный фон с прозрачностью
+	display: flex;
+	justify-content: center; // Центрируем по горизонтали
+	align-items: center; // Центрируем по вертикали
+	z-index: 1000; // Убедитесь, что z-index высокий
+	overflow: hidden;
+}
+
+.fullscreen_image_wrapper {
+	max-width: 70%; // Максимальная ширина для изображения
+	max-height: 70%; // Максимальная высота для изображения
+}
+
+.fullscreen_image {
+	width: 100%; // Ширина изображения 100% от родительского контейнера
+	height: 100%; // Автоматическая высота для сохранения пропорций
+	object-fit: contain; // Сохранение пропорций изображения
+	border-radius: 8px; // Скругление углов (опционально)
+}

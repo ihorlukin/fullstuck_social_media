@@ -1,0 +1,44 @@
+.people {
+	@apply bg-backgroundSf py-5 px-16 flex flex-col gap-5;
+	height: calc(100vh - 50px);
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		button {
+			width: auto;
+			height: auto;
+			padding: 5px;
+			background-color: violet;
+			border-radius: 10px;
+			border: 1px solid black;
+			color: black;
+		}
+	}
+	.select_container {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+
+		label {
+			display: flex;
+			flex-direction: row;
+			gap: 0.5rem;
+			align-items: center;
+		}
+	}
+
+	.input_container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.separator {
+		height: 1px;
+		background-color: black;
+		margin: 10px 0;
+	}
+}

@@ -1,0 +1,9 @@
+.searchUserForChat {
+	z-index: 100;
+	@apply bg-background top-0 left-0 absolute h-full w-[384px];
+
+	.title {
+		border: 1px solid black;
+		@apply w-full h-10 flex justify-center items-center;
+	}
+}

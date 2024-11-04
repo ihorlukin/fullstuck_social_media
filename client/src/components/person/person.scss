@@ -1,0 +1,32 @@
+@import '../../app/globals.scss';
+
+.person {
+	-webkit-box-shadow: var(--box-shadow);
+	-moz-box-shadow: var(--box-shadow);
+	box-shadow: var(--box-shadow);
+	@apply bg-background text-textColor rounded-[20px] cursor-pointer w-full flex justify-between content-center px-2 py-2 mb-2;
+
+	&:hover {
+		@apply bg-cyan-100;
+	}
+
+	.container {
+		padding: 20px;
+		margin-top: 20px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.information {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 10px;
+		img {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+	}
+}

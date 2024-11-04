@@ -1,0 +1,10 @@
+.home {
+	@apply bg-background py-5 px-[70px] min-h-screen;
+
+	@media (max-width: 600px) {
+		padding: 10px;
+	}
+	@media (max-width: 960px) {
+		padding: 20px;
+	}
+}

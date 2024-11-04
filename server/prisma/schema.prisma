@@ -1,0 +1,95 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String       @id @default(cuid())
+  email      String    @unique
+  password   String
+  username   String    @unique @db.VarChar(20)
+  usertype   String
+  type1      String    @default("")
+  type2      String    @default("")
+  country    String    @default("")
+  city       String    @default("")
+  website    String    @default("")
+  profilePic String    @default("")
+  coverPic   String    @default("")
+  followedBy Follows[] @relation("followedBy")
+  following  Follows[]  @relation("following")
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  likedPosts Post[] @relation("postLikes")
+  posts      Post[] 
+  comments   Comment[]
+  messages Message[]
+  chats Chat[] @relation("chatUsers")
+}
+
+model Follows {
+  followedBy   User @relation("followedBy", fields: [followedById], references: [id], onDelete: Cascade)
+  followedById String
+  following    User @relation("following", fields: [followingId], references: [id], onDelete: Cascade)
+  followingId  String
+
+  @@id([followingId, followedById])
+}
+
+model Post {
+  id        String       @id @default(cuid())
+  desc      String
+  img       String    @default("")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  likes     User[]    @relation("postLikes")
+  author    User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId  String
+  comments Comment[]
+  
+}
+
+model Comment {
+  id        String    @id @default(uuid())
+  content   String
+  createdAt DateTime  @default(now())
+  postId    String
+  post      Post      @relation(fields: [postId], references: [id], onDelete: Cascade)
+  parentId  String?   // ID of the parent comment, if any
+  parent    Comment?  @relation("CommentToComment", fields: [parentId], references: [id], onDelete: Cascade)
+  children  Comment[] @relation("CommentToComment") 
+  authorId  String
+  author    User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+}
+
+model Message {
+  id String       @id @default(cuid())
+  sender   User @relation(fields: [senderId], references: [id])
+  senderId String
+  content  String 
+  chat  Chat @relation("messages", fields: [chatId], references: [id])   
+  chatId String
+  chatAsLatest Chat? @relation("latest")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Chat {
+  id String       @id @default(cuid())
+  chatName String
+  users User[] @relation("chatUsers")
+  messages Message[] @relation("messages")
+  latestMessage Message? @relation("latest", fields: [latestMessageId], references: [id])
+  latestMessageId String? @unique
+}

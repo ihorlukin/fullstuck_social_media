@@ -1,0 +1,118 @@
+@import '../../../globals.scss';
+.profile {
+	@apply bg-backgroundSf;
+
+	.images {
+		width: 100%;
+		height: 300px;
+		position: relative;
+
+		.cover {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.profilePic {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			object-fit: cover;
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: auto;
+			top: 200px;
+		}
+	}
+	.profileContainer {
+		padding: 20px 70px;
+		margin-top: 30px;
+
+		@include mobile {
+			padding: 10px;
+		}
+
+		@include tablet {
+			padding: 20px;
+		}
+
+		.uInfo {
+			@apply bg-background text-textColor p-12 flex flex-col justify-between content-center h-[180px];
+			-webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+			-moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+			box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+			border-radius: 20px;
+			margin-bottom: 20px;
+
+			@include mobile {
+				flex-direction: column;
+				height: 30vh;
+				padding: 20px;
+				margin-top: 100px;
+			}
+
+			.left {
+				flex: 1;
+				display: flex;
+				gap: 10px;
+
+				@include tablet {
+					flex-wrap: wrap;
+				}
+
+				a {
+					text-decoration: none;
+					@apply text-textColor;
+				}
+			}
+
+			.center {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 10px;
+				a {
+					text-decoration: none;
+					@apply text-textColor;
+				}
+				span {
+					font-size: 30px;
+					font-weight: 500;
+				}
+
+				.info {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: 20px;
+					.item {
+						@apply text-textColor flex content-center justify-between h-3 gap-1;
+
+						span {
+							font-size: 12px;
+						}
+					}
+				}
+				button {
+					border: none;
+					background-color: #5271ff;
+					color: white;
+					padding: 10px 20px;
+					border-radius: 5px;
+					cursor: pointer;
+				}
+			}
+
+			.right {
+				flex: 1;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				gap: 10px;
+			}
+		}
+	}
+}
